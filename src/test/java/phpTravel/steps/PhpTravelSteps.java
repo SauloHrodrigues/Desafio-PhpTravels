@@ -4,6 +4,7 @@ import static phpTravel.utils.AcessarSite.acessarSite;
 
 import org.junit.Assert;
 
+import cucumber.api.java.After;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -12,6 +13,14 @@ import phpTravel.utils.DriverFactory;
 
 public class PhpTravelSteps {
 	HomePhpTravelPage home = new HomePhpTravelPage();
+	
+	@After
+	public void finaliza() {
+		DriverFactory.killDriver();
+	}
+	
+	
+	
 	@Given("^Estar no site https://phptravels\\.com/demo/$")
 	public void estar_no_site_https_phptravels_com_demo() throws Throwable {
 	    acessarSite("https://phptravels.com/demo/");
