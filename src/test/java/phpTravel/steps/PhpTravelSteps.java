@@ -7,6 +7,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import phpTravel.page.HomePhpTravelPage;
+import phpTravel.utils.ScrenShorts;
 
 public class PhpTravelSteps {
 	HomePhpTravelPage home = new HomePhpTravelPage();
@@ -49,6 +50,7 @@ public class PhpTravelSteps {
 
 	@Then("^Validar o Agradecimento$")
 	public void validar_o_Agradecimento() throws Throwable {
+		ScrenShorts.geraArquivosEvidencias(null);
 			Assert.assertTrue("Não validou os agradecimentos!",home.validaMensagem());
 	}
 }
