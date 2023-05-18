@@ -1,6 +1,5 @@
 package phpTravel.steps;
-
-import static phpTravel.utils.AcessarSite.acessarSite;
+import static phpTravel.utils.AcessarSite.acessarSitePHPTravels;
 
 import org.junit.Assert;
 
@@ -14,7 +13,7 @@ public class PhpTravelSteps {
 		
 	@Given("^Estar no site https://phptravels\\.com/demo/$")
 	public void estar_no_site_https_phptravels_com_demo() throws Throwable {
-	    acessarSite("https://phptravels.com/demo/");
+	    acessarSitePHPTravels();
 	}
 
 	@Given("^preencher o campo First Name$")
