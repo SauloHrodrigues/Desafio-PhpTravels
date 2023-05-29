@@ -29,16 +29,17 @@ public class HomePhpTravelPage {
 	private WebElement campoResultado;
 	
 	@FindBy(how = How.ID, using = "numb1")
-	private WebElement primeiroNumero;
+	private WebElement lblPrimeiroNumero;
 	
 	@FindBy(how = How.ID, using = "numb2")
-	private WebElement segundoNumero;
+	private WebElement lblSegundoNumero;
 	
 	@FindBy(how = How.ID, using = "demo")
 	private WebElement btnSubmit;
 
 	@FindBy(how = How.XPATH, using = "//h2/strong[text()=' Thank you!']")
 	private WebElement msgThankYou;
+
 
 //	CONSTRUTOR
 	public HomePhpTravelPage() {
@@ -47,8 +48,8 @@ public class HomePhpTravelPage {
 	}
 	
 //	METODOS
-	public void escreverFirstName(String firstName) {
-		dsl.escrever(campoFirstName, firstName);
+	public void escreverFirstName(String texto) {
+		dsl.escrever(campoFirstName, texto);
 	}
 	
 	public void escreverLastName(String lastName) {
@@ -72,18 +73,20 @@ public class HomePhpTravelPage {
 	}
 	
 	public Integer retornaN1() {
-		return Integer.parseInt(primeiroNumero.getText());		
+		return Integer.parseInt(lblPrimeiroNumero.getText());		
 	}
 
 	public Integer retornaN2() {
-		return Integer.parseInt(segundoNumero.getText());		
+		return Integer.parseInt(lblSegundoNumero.getText());		
 	}
 	
 	public Integer getSoma() {
 		return retornaN1()+retornaN2();
 	} 
-	public boolean validaMensagem() {
-		return dsl.esperarElementoVisivel(msgThankYou);
+	
+	public String validaMensagem() {
+		
+		return dsl.esperarElemento(msgThankYou);
 	}
 	
 }

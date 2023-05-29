@@ -1,10 +1,12 @@
 package phpTravel.runner;
 
+
 import org.junit.runner.RunWith;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.SnippetType;
 import cucumber.api.junit.Cucumber;
+
 
 @CucumberOptions(features = "src/test/resources/feature/phptravel.feature", 
 		glue = {"phpTravel.steps", "phpTravel.utils"},
@@ -14,6 +16,7 @@ import cucumber.api.junit.Cucumber;
 		strict = true)
 @RunWith(Cucumber.class)
 public class PhpTravelRunner {
+
 
 	
 }

@@ -30,7 +30,7 @@ public class Configuracoes {
 	}
 	
 	public String getDriverPath(){
-		String driverPath = properties.getProperty("driverPath");
+		String driverPath = properties.getProperty("driverPath");//driverPath
 		if(driverPath!= null) return driverPath;
 		else throw new RuntimeException("driverPath not specified in the Configuracoes.properties file.");		
 	}
@@ -43,6 +43,12 @@ public class Configuracoes {
 	
 	public String getUrlPHPTravals() {
 		String url = properties.getProperty("urlPHPTranels");
+		if(url != null) return url;
+		else throw new RuntimeException("url not specified in the Configuracoes.properties file.");
+	}
+
+	public String getBaseDados() {
+		String url = properties.getProperty("BASE_DADOS");
 		if(url != null) return url;
 		else throw new RuntimeException("url not specified in the Configuracoes.properties file.");
 	}

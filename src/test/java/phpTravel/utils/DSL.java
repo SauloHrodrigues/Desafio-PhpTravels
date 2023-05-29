@@ -85,6 +85,14 @@ public class DSL {
 			return false;
 		}
 	}
+	public String esperarElemento(WebElement elemento) {
+		try {
+			wait.until(ExpectedConditions.visibilityOf(elemento));
+			return elemento.getText();
+		} catch (Exception e) {
+			return "Elemento não disponivel!";
+		}
+	}
 	
 //	************** Valida elemento Visivel na tela ******************
 	

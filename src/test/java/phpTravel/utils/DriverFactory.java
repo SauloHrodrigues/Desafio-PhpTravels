@@ -6,13 +6,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class DriverFactory {
 
 	private static WebDriver driver;	
+	private static Configuracoes configuracoes = new Configuracoes();
 	private DriverFactory() {
 		
 	}
 	
 	public static WebDriver getDriver() {
 		if(driver == null) {
-			System.setProperty("webdriver.chrome.driver", ".\\drivers\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", configuracoes.getDriverPath());
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();			
 		}
