@@ -20,6 +20,4 @@ Feature: Desafio de cucumber, selenium e java
     When Digitar a soma apresentada
     And Clicar no botão Submit
     Then Validar o Agradecimento 
-    
-
 
