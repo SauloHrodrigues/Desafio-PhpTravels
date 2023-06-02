@@ -15,8 +15,8 @@ public class Hooks {
 //	}
 	
 	@After
-	public void finalizarGeral(Scenario sc) throws IOException {
-//		ScrenShorts.evidencias(sc);
+	public void finalizaProjeto(Scenario sc) throws IOException {
+		ScrenShorts.evidencias(sc);
 		killDriver();
 	}
 	

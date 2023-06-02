@@ -41,9 +41,6 @@ public class HomePhpTravelPage {
 	@FindBy(how = How.ID, using = "colored")
 	private WebElement imgValidado;
 
-	@FindBy(how = How.XPATH, using = "//h2/strong[text()=' Thank you!']")
-	private WebElement msgThankYou;
-
 
 //	CONSTRUTOR
 	public HomePhpTravelPage() {
@@ -52,27 +49,27 @@ public class HomePhpTravelPage {
 	}
 	
 //	METODOS
-	public void escreverFirstName(String texto) {
+	public void setFirstName(String texto) {
 		dsl.escrever(campoFirstName, texto);
 	}
 	
-	public void escreverLastName(String lastName) {
+	public void setLastName(String lastName) {
 		dsl.escrever(campoLastName, lastName);
 	}
 	
-	public void escreverBusinessName(String businessName) {
+	public void setBusinessName(String businessName) {
 		dsl.escrever(campoBusinessName, businessName);
 	}
 	
-	public void escreverEmail(String email) {
+	public void setEmail(String email) {
 		dsl.escrever(campoEmail, email);
 	}
 	
-	public void escreverResultadoSoma() {
+	public void getResultadoSoma() {
 		dsl.escrever(campoResultado, getNumero1()+getNumero2()) ;
 	}
 	
-	public void clicarSubmit() {
+	public void setSubmit() {
 		dsl.clicarJS(btnSubmit);
 	}
 	
@@ -84,7 +81,7 @@ public class HomePhpTravelPage {
 		return Integer.parseInt(lblSegundoNumero.getText());		
 	}
 	
-	public void validaMensagemThankYou() {	
+	public void validarMensagemThankYou() {	
 		dsl.esperarElementoVisivel(imgValidado, 20);
 		Assert.assertTrue(imgValidado.isDisplayed());	
 		}

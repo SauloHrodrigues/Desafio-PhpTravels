@@ -3,10 +3,7 @@ package com.phptravels.kernel;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
@@ -44,7 +41,7 @@ public class ExcelUtils {
 		return celula.getStringCellValue();
 	}
 	
-	public Integer buscarCodigo(String codCenario) {
+	public Integer pesquisarCodigoID(String codCenario) {
 		int linha =0;
 		int coluna = 0;
 		
@@ -54,6 +51,4 @@ public class ExcelUtils {
 			
 		return linha;
 	}
-
-	
 }

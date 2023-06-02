@@ -12,9 +12,8 @@ public class DriverFactory {
 	}
 	
 	public static WebDriver getDriver() {
-		System.out.println("entrou no getDriver!!!!!!");
+	
 		if(driver == null) {
-//			System.setProperty("webdriver.chrome.driver", ".\\drivers\\chromedriver.exe");
 			System.setProperty("webdriver.chrome.driver", configuracoes.getDriverPath());
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();	

@@ -9,10 +9,8 @@ import java.util.Properties;
 public class Configuracoes {
 
 	private Properties properties;
-	
-	private final String propertyFilePath= ".//src//test//resources//configuracoes//configuracoes.properties";
-
-	
+	private final String propertyFilePath= "./src/test/resources/configuracoes/configuracoes.properties";
+		
 	public Configuracoes(){
 		BufferedReader reader;
 		try {
@@ -34,12 +32,6 @@ public class Configuracoes {
 		String driverPath = properties.getProperty("driver.path");//driverPath
 		if(driverPath!= null) return driverPath;
 		else throw new RuntimeException("driverPath not specified in the Configuracoes.properties file.");		
-	}
-	
-	public long getImplicitlyWait() {		
-		String implicitlyWait = properties.getProperty("driver.implicitlyWait");
-		if(implicitlyWait != null) return Long.parseLong(implicitlyWait);
-		else throw new RuntimeException("implicitlyWait not specified in the Configuracoes.properties file.");		
 	}
 	
 	public String getUrl() {
