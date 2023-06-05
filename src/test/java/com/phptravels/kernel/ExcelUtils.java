@@ -22,8 +22,8 @@ public class ExcelUtils {
 	private final int Email=4;
 
 	//metodo setar o arquivo (abre o arquivo)
-	private void setArquivoExcel(String sNomeDaAbaDaPlanilha ) { 
-		File arquivo = new File("./src/test/resources/massa_dados/planilhaDados.xls"); 
+	private void setArquivoExcel(String sNomeDaAbaDaPlanilha ) {  
+		File arquivo = new File(configuracoes.getBaseDados()); 
 		FileInputStream planilha = null;
 		try {
 			planilha = new FileInputStream(arquivo);
@@ -49,11 +49,10 @@ public class ExcelUtils {
 	
 	private Integer pesquisarCodigoID(String codCenario) {
 		int linha =0;
-		int coluna = 0;
 		
 		do {	
 			linha++;
-		} while (!codCenario.equalsIgnoreCase(getConteudoCelula(linha,coluna)));
+		} while (!codCenario.equalsIgnoreCase(getConteudoCelula(linha,Codigo)));
 			
 		return linha;
 	}

@@ -41,8 +41,9 @@ public class Configuracoes {
 	}
 
 	public String getBaseDados() {
-		String url = properties.getProperty("BASE_DADOS");
-		if(url != null) return url;
+		String url01 = properties.getProperty("BASE_DADOS");
+		System.out.println("A URL vale = "+url01);
+		if(url01 != null) return url01;
 		else throw new RuntimeException("url not specified in the Configuracoes.properties file.");
 	}
 
