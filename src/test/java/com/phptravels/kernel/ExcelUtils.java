@@ -14,10 +14,16 @@ public class ExcelUtils {
 	private static HSSFSheet abaPlanilha;
 	private static HSSFCell celula; 
 	private static Configuracoes configuracoes = new Configuracoes();
+	
+	private final int Codigo=0;
+	private final int FirtName=1;
+	private final int LastName=2;
+	private final int BusinessName=3;
+	private final int Email=4;
 
 	//metodo setar o arquivo (abre o arquivo)
 	private void setArquivoExcel(String sNomeDaAbaDaPlanilha ) { 
-		File arquivo = new File(configuracoes.getBaseDados()); 
+		File arquivo = new File("./src/test/resources/massa_dados/planilhaDados.xls"); 
 		FileInputStream planilha = null;
 		try {
 			planilha = new FileInputStream(arquivo);
@@ -31,7 +37,7 @@ public class ExcelUtils {
 		}
 		abaPlanilha = pastaDeTrabalho.getSheet(sNomeDaAbaDaPlanilha);
 		
-	}// FIM - metodo setar o arquivo 
+	}
 		
 	private String getConteudoCelula(int iNumeroDaLinha, int iNumeroDaCelula) {
 		setArquivoExcel("MassaDados");
@@ -41,7 +47,7 @@ public class ExcelUtils {
 		return celula.getStringCellValue();
 	}
 	
-	public Integer pesquisarCodigoID(String codCenario) {
+	private Integer pesquisarCodigoID(String codCenario) {
 		int linha =0;
 		int coluna = 0;
 		
@@ -51,4 +57,22 @@ public class ExcelUtils {
 			
 		return linha;
 	}
+	
+	public String getExcelFirstName(String codigoCenario) {
+		return (getConteudoCelula(pesquisarCodigoID(codigoCenario), FirtName));
+	}
+	
+	public String getExcelLastName(String codigoCenario) {
+		return (getConteudoCelula(pesquisarCodigoID(codigoCenario), LastName));
+	}
+	
+	
+	public String getExcelBusinessName(String codigoCenario) {
+		return (getConteudoCelula(pesquisarCodigoID(codigoCenario), BusinessName));
+	}
+	
+	public String getExcelEmail(String codigoCenario) {
+		return (getConteudoCelula(pesquisarCodigoID(codigoCenario), Email));
+	}
+	
 }
