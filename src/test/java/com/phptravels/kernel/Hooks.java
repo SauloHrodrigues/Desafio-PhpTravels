@@ -8,12 +8,7 @@ import cucumber.api.Scenario;
 import cucumber.api.java.After;
 
 public class Hooks {
-	
-//	@Before("@#001")
-//	public void inicio() {
-//		getDriver();
-//	}
-	
+		
 	@After
 	public void finalizaProjeto(Scenario sc) throws IOException {
 		ScrenShorts.evidencias(sc);

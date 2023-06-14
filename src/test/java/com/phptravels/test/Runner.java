@@ -14,7 +14,7 @@ import cucumber.api.junit.Cucumber;
 		dryRun = false, 
 		strict = true)
 @RunWith(Cucumber.class)
-public class PhpTravelRunner {
+public class Runner {
 
 
 	

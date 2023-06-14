@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
@@ -13,18 +15,20 @@ public class ExcelUtils {
 	private static HSSFWorkbook pastaDeTrabalho;
 	private static HSSFSheet abaPlanilha;
 	private static HSSFCell celula; 
-	private static Configuracoes configuracoes = new Configuracoes();
+	private static Configuracoes configuracoes;
+	private FileInputStream planilha;
+	private int totalRegistros;
+	private int totalColunas;
 	
-	private final int Codigo=0;
-	private final int FirtName=1;
-	private final int LastName=2;
-	private final int BusinessName=3;
-	private final int Email=4;
+	
+	public ExcelUtils() {
+		configuracoes = new Configuracoes();
+	}
 
 	//metodo setar o arquivo (abre o arquivo)
 	private void setArquivoExcel(String sNomeDaAbaDaPlanilha ) {  
 		File arquivo = new File(configuracoes.getBaseDados()); 
-		FileInputStream planilha = null;
+		planilha = null;
 		try {
 			planilha = new FileInputStream(arquivo);
 		} catch (FileNotFoundException e) {
@@ -33,45 +37,47 @@ public class ExcelUtils {
 		try {
 			pastaDeTrabalho = new HSSFWorkbook(planilha);
 		} catch (IOException e) {
-			System.out.println("Planilha não encontrada.");
+			System.out.println("Excel não encontrado!");
 		}
 		abaPlanilha = pastaDeTrabalho.getSheet(sNomeDaAbaDaPlanilha);
-		
+		totalRegistros = abaPlanilha.getLastRowNum();
+		totalColunas = abaPlanilha.getRow(0).getLastCellNum();	
+	}
+	
+	public void closeExcel() {
+		try {
+			planilha.close();
+			pastaDeTrabalho.close();	
+		} catch (IOException e) {
+			System.out.println("Excel não encontrado! ");
+			e.printStackTrace();
+		}
 	}
 		
 	private String getConteudoCelula(int iNumeroDaLinha, int iNumeroDaCelula) {
-		setArquivoExcel("MassaDados");
-		//capturando o endetreço da celula na linha e celula(coluna), passada nos parametros
 		celula = abaPlanilha.getRow(iNumeroDaLinha).getCell(iNumeroDaCelula);
-		//retorna o valor da celula encontrada
 		return celula.getStringCellValue();
 	}
 	
-	private Integer pesquisarCodigoID(String codCenario) {
-		int linha =0;
+	public List<String> pesquisaRegistro(Integer coluna, String texto, String planilha) {
+		setArquivoExcel(planilha);
+		int linhaRegistro =0;
+		List<String> registro= new ArrayList<>(); 
 		
-		do {	
-			linha++;
-		} while (!codCenario.equalsIgnoreCase(getConteudoCelula(linha,Codigo)));
+		while (linhaRegistro < totalRegistros) {
+			if(texto.equalsIgnoreCase(getConteudoCelula(linhaRegistro, coluna))) {
+				
+				for(int i=0;i<totalColunas;i++) {
+					registro.add(getConteudoCelula(linhaRegistro, i));
+				}
+				linhaRegistro = totalRegistros;
+				break;
+			}
 			
-		return linha;
-	}
-	
-	public String getExcelFirstName(String codigoCenario) {
-		return (getConteudoCelula(pesquisarCodigoID(codigoCenario), FirtName));
-	}
-	
-	public String getExcelLastName(String codigoCenario) {
-		return (getConteudoCelula(pesquisarCodigoID(codigoCenario), LastName));
-	}
-	
-	
-	public String getExcelBusinessName(String codigoCenario) {
-		return (getConteudoCelula(pesquisarCodigoID(codigoCenario), BusinessName));
-	}
-	
-	public String getExcelEmail(String codigoCenario) {
-		return (getConteudoCelula(pesquisarCodigoID(codigoCenario), Email));
+			linhaRegistro++;
+		}	
+		
+		return registro;	
 	}
 	
 }

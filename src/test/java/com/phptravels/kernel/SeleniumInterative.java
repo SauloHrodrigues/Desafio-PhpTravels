@@ -26,7 +26,7 @@ public class SeleniumInterative extends Esperas{
 	}
 	
 	public void escrever(WebElement elemento, String texto) {
-//		elemento.sendKeys(texto);
+//		elemento.sendKeys(texto); Usar esperas!!!!
 		escrever(elemento, texto, this.tempoPadrao);
 	}
 	

@@ -53,12 +53,7 @@ public class Esperas {
 		}
 		
 		public void esperarElementoVisivel(WebElement elemento, int time) {
-			esperar(time).until(ExpectedConditions.visibilityOf(elemento));
+			esperar(time).until(ExpectedConditions.visibilityOf(elemento));//retornar 
 		}
 		
-		
-	
-		
 }//Fim classe
-
-
