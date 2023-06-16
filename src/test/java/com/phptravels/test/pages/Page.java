@@ -2,7 +2,6 @@ package com.phptravels.test.pages;
 
 import static com.phptravels.kernel.DriverFactory.getDriver;
 
-import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -75,9 +74,9 @@ public class Page {
 	}
 
 	
-	public void validarMensagemThankYou() {	
+	public WebElement msgThankYou() {	
 		dsl.esperarElementoVisivel(msgTankYou, 20);
-		Assert.assertTrue(msgTankYou.isDisplayed());	
+		return msgTankYou;	
 		}
 	
 }

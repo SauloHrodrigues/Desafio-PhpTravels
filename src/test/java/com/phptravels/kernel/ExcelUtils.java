@@ -59,7 +59,7 @@ public class ExcelUtils {
 		return celula.getStringCellValue();
 	}
 	
-	public List<String> pesquisaRegistro(Integer coluna, String texto, String planilha) {
+	public List<String> buscarRegistro(Integer coluna, String texto, String planilha) {
 		setArquivoExcel(planilha);
 		int linhaRegistro =0;
 		List<String> registro= new ArrayList<>(); 

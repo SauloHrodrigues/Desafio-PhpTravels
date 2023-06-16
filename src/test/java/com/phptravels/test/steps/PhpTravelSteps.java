@@ -1,7 +1,8 @@
 package com.phptravels.test.steps;
 
 
-import com.phptravels.test.model.FormularioModel;
+import com.phptravels.test.logica.FormularioLogica;
+
 import cucumber.api.Scenario;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -9,11 +10,11 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class PhpTravelSteps {
-	private FormularioModel form; 
+	private FormularioLogica form; 
 	
 	@Before
 	public void antes(Scenario sc) {
-			form= new FormularioModel(sc);
+			form= new FormularioLogica(sc);
 	}
 
 	@Given("^Estar no site https://phptravels\\.com/demo/$")
@@ -56,6 +57,6 @@ public class PhpTravelSteps {
 
 	@Then("^Validar o Agradecimento$")
 	public void validar_o_Agradecimento() throws Throwable {
-		form.validarMensagem();
+		form.validarMensagemThankYou();
 	}
 }
