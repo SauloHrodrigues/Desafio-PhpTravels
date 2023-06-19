@@ -1,6 +1,6 @@
 package com.phptravels.kernel;
 
-import static com.phptravels.kernel.DriverFactory.getDriver;
+import static com.phptravels.kernel.ContrutorDriver.getDriver;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,7 +12,7 @@ import org.openqa.selenium.TakesScreenshot;
 
 import cucumber.api.Scenario;
 
-public class ScrenShorts  {
+public class CapturaImgemTela  {
 
 	public static void evidencias(Scenario sc) throws IOException {
 		LocalDateTime data = LocalDateTime.now();

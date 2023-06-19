@@ -3,7 +3,7 @@ package com.phptravels.kernel;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class DriverFactory {
+public class ContrutorDriver {
 
 	private static WebDriver driver;	
 	private static Configuracoes configuracoes = new Configuracoes();

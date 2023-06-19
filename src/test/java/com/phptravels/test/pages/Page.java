@@ -1,6 +1,6 @@
 package com.phptravels.test.pages;
 
-import static com.phptravels.kernel.DriverFactory.getDriver;
+import static com.phptravels.kernel.ContrutorDriver.getDriver;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

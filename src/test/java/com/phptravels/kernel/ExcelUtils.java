@@ -19,6 +19,7 @@ public class ExcelUtils {
 	private FileInputStream planilha;
 	private int totalRegistros;
 	private int totalColunas;
+	private File arquivo;
 	
 	
 	public ExcelUtils() {
@@ -27,17 +28,17 @@ public class ExcelUtils {
 
 	//metodo setar o arquivo (abre o arquivo)
 	private void setArquivoExcel(String sNomeDaAbaDaPlanilha ) {  
-		File arquivo = new File(configuracoes.getBaseDados()); 
+		arquivo = new File(configuracoes.getBaseDados()); 
 		planilha = null;
 		try {
 			planilha = new FileInputStream(arquivo);
 		} catch (FileNotFoundException e) {
-			System.out.println("Arquivo não encontrada.");
+			throw new RuntimeException("Arquivo não encontrado: " + arquivo.getAbsolutePath(), e);
 		} 
 		try {
 			pastaDeTrabalho = new HSSFWorkbook(planilha);
 		} catch (IOException e) {
-			System.out.println("Excel não encontrado!");
+			throw new RuntimeException("Arquivo não encontrado: " + arquivo.getAbsolutePath(), e);
 		}
 		abaPlanilha = pastaDeTrabalho.getSheet(sNomeDaAbaDaPlanilha);
 		totalRegistros = abaPlanilha.getLastRowNum();
@@ -49,8 +50,7 @@ public class ExcelUtils {
 			planilha.close();
 			pastaDeTrabalho.close();	
 		} catch (IOException e) {
-			System.out.println("Excel não encontrado! ");
-			e.printStackTrace();
+			throw new RuntimeException("Arquivo não encontrado: " + arquivo.getAbsolutePath(), e);
 		}
 	}
 		

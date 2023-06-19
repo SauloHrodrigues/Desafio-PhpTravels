@@ -1,6 +1,6 @@
 package com.phptravels.kernel;
 
-import static com.phptravels.kernel.DriverFactory.killDriver;
+import static com.phptravels.kernel.ContrutorDriver.killDriver;
 
 import java.io.IOException;
 
@@ -11,7 +11,7 @@ public class Hooks {
 		
 	@After
 	public void finalizaProjeto(Scenario sc) throws IOException {
-		ScrenShorts.evidencias(sc);
+		CapturaImgemTela.evidencias(sc);
 		killDriver();
 	}
 	

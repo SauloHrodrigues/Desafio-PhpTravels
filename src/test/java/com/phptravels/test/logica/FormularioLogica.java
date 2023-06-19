@@ -1,6 +1,6 @@
 package com.phptravels.test.logica;
 
-import static com.phptravels.kernel.DriverFactory.getDriver;
+import static com.phptravels.kernel.ContrutorDriver.getDriver;
 
 import org.junit.Assert;
 
