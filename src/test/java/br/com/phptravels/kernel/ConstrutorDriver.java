@@ -1,9 +1,9 @@
-package com.phptravels.kernel;
+package br.com.phptravels.kernel;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class ContrutorDriver {
+public class ConstrutorDriver {
 
 	private static WebDriver driver;	
 	private static Configuracoes configuracoes = new Configuracoes();

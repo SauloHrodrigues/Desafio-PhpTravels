@@ -1,13 +1,12 @@
-package com.phptravels.test.logica;
+package br.com.phptravels.test.logica;
 
-import static com.phptravels.kernel.ContrutorDriver.getDriver;
+import static br.com.phptravels.kernel.ConstrutorDriver.getDriver;
 
 import org.junit.Assert;
 
-import com.phptravels.kernel.Configuracoes;
-import com.phptravels.test.model.FormularioModel;
-import com.phptravels.test.pages.Page;
-
+import br.com.phptravels.kernel.Configuracoes;
+import br.com.phptravels.test.model.FormularioModel;
+import br.com.phptravels.test.pages.Page;
 import cucumber.api.Scenario;
 
 

@@ -1,8 +1,7 @@
-package com.phptravels.test.steps;
+package br.com.phptravels.test.steps;
 
 
-import com.phptravels.test.logica.FormularioLogica;
-
+import br.com.phptravels.test.logica.FormularioLogica;
 import cucumber.api.Scenario;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;

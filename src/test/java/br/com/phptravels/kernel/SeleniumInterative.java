@@ -1,5 +1,5 @@
-package com.phptravels.kernel;
-import static com.phptravels.kernel.ContrutorDriver.getDriver;
+package br.com.phptravels.kernel;
+import static br.com.phptravels.kernel.ConstrutorDriver.getDriver;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;

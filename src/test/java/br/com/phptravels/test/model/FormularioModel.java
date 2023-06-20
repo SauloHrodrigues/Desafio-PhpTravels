@@ -1,8 +1,8 @@
-package com.phptravels.test.model;
+package br.com.phptravels.test.model;
 
 import java.util.List;
 
-import com.phptravels.kernel.ExcelUtils;
+import br.com.phptravels.kernel.ExcelUtils;
 
 public class FormularioModel {
 	private final int codigoExcel = 0;

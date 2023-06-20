@@ -1,6 +1,6 @@
-package com.phptravels.kernel;
+package br.com.phptravels.kernel;
 
-import static com.phptravels.kernel.ContrutorDriver.getDriver;
+import static br.com.phptravels.kernel.ConstrutorDriver.getDriver;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,6 +10,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
+import br.com.phptravels.kernel.ConstrutorDriver;
 import cucumber.api.Scenario;
 
 public class CapturaImgemTela  {
@@ -32,6 +33,7 @@ public class CapturaImgemTela  {
 			status ="PASS";
 		}
 		
+//		TakesScreenshot screen = (TakesScreenshot) getDriver();
 		TakesScreenshot screen = (TakesScreenshot) getDriver();
 		File evidencias= screen.getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(evidencias, new File(

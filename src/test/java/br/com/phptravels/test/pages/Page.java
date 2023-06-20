@@ -1,12 +1,12 @@
-package com.phptravels.test.pages;
+package br.com.phptravels.test.pages;
 
-import static com.phptravels.kernel.ContrutorDriver.getDriver;
+import static br.com.phptravels.kernel.ConstrutorDriver.getDriver;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.phptravels.kernel.SeleniumInterative;
+import br.com.phptravels.kernel.SeleniumInterative;
 
 public class Page {
 

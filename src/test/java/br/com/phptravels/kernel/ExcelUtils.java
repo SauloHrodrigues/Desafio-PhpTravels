@@ -1,4 +1,4 @@
-package com.phptravels.kernel;
+package br.com.phptravels.kernel;
 
 import java.io.File;
 import java.io.FileInputStream;

@@ -1,6 +1,6 @@
-package com.phptravels.kernel;
+package br.com.phptravels.kernel;
 
-import static com.phptravels.kernel.ContrutorDriver.killDriver;
+import static br.com.phptravels.kernel.ConstrutorDriver.killDriver;
 
 import java.io.IOException;
 

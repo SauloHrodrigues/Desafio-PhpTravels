@@ -1,6 +1,6 @@
-package com.phptravels.kernel;
+package br.com.phptravels.kernel;
 
-import static com.phptravels.kernel.ContrutorDriver.getDriver;
+import static br.com.phptravels.kernel.ConstrutorDriver.getDriver;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
