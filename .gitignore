@@ -30,4 +30,4 @@ replay_pid*
 /target/
 /bin/
 /evidencias/
-/.settings/
+/settings/
