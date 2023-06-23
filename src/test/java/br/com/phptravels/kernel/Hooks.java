@@ -11,7 +11,7 @@ public class Hooks {
 		
 	@After
 	public void finalizaProjeto(Scenario sc) throws IOException {
-		CapturaImgemTela.evidencias(sc);
+		CapturaEvidenciasTela.evidencias(sc);
 		killDriver();
 	}
 	

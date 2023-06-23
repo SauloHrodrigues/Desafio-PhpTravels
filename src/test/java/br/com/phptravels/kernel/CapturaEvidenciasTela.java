@@ -10,10 +10,9 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
-import br.com.phptravels.kernel.ConstrutorDriver;
 import cucumber.api.Scenario;
 
-public class CapturaImgemTela  {
+public class CapturaEvidenciasTela  {
 
 	public static void evidencias(Scenario sc) throws IOException {
 		LocalDateTime data = LocalDateTime.now();
