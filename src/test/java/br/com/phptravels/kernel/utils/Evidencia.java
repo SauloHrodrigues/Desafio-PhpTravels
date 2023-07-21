@@ -1,6 +1,4 @@
-package br.com.phptravels.kernel;
-
-import static br.com.phptravels.kernel.ConstrutorDriver.getDriver;
+package br.com.phptravels.kernel.utils;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,18 +8,20 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
+import br.com.phptravels.kernel.Contexto;
 import cucumber.api.Scenario;
 
-public class CapturaEvidenciasTela  {
+public class Evidencia  {
 
-	public static void evidencias(Scenario sc) throws IOException {
+	public void capturarTela(Scenario sc) throws IOException {
+		//TODO tratar exceção
 		LocalDateTime data = LocalDateTime.now();
 		int dd = data.getDayOfMonth();
 		int MM = data.getMonthValue();
 		int aaaa = data.getYear();
 		int hh =data.getHour();
 		int mm = data.getMinute();
-
+		//arrumar TODO
 		String aux =sc.getSourceTagNames().stream().filter(t->t.startsWith("@#")).findFirst().get();
 		String[] tag = aux.split("@");
 		String status;
@@ -33,7 +33,7 @@ public class CapturaEvidenciasTela  {
 		}
 		
 //		TakesScreenshot screen = (TakesScreenshot) getDriver();
-		TakesScreenshot screen = (TakesScreenshot) getDriver();
+		TakesScreenshot screen = (TakesScreenshot) Contexto.getDriver();
 		File evidencias= screen.getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(evidencias, new File(
 				"evidencias"+File.separator+tag[1]+"_"+dd+"_"+MM+"_"+aaaa+

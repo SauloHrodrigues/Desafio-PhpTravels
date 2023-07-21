@@ -1,4 +1,4 @@
-package br.com.phptravels.kernel;
+package br.com.phptravels.kernel.readers;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -6,12 +6,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
-public class Configuracoes {
+public class ConfiguracoesPropriedades {
 
 	private Properties properties;
 	private final String propertyFilePath= "./src/test/resources/configuracoes/configuracoes.properties";
 		
-	public Configuracoes(){
+	public ConfiguracoesPropriedades(){
 		BufferedReader reader;
 		try {
 			reader = new BufferedReader(new FileReader(propertyFilePath));
@@ -41,7 +41,7 @@ public class Configuracoes {
 	}
 
 	public String getBaseDados() {
-		String url01 = properties.getProperty("BASE_DADOS");
+		String url01 = properties.getProperty("BASE_DADOS");//baseDados
 		if(url01 != null) return url01;
 		else throw new RuntimeException("url not specified in the Configuracoes.properties file.");
 	}

@@ -2,7 +2,8 @@ package br.com.phptravels.test.model;
 
 import java.util.List;
 
-import br.com.phptravels.kernel.ExcelUtils;
+import br.com.phptravels.kernel.Contexto;
+import br.com.phptravels.kernel.readers.ExcelUtils;
 
 public class FormularioModel {
 	private final int codigoExcel = 0;
@@ -17,9 +18,9 @@ public class FormularioModel {
 	private List<String> registro;
 	
 	//CONSTRUTOR
-	public FormularioModel(String regCenario) {
+	public FormularioModel() {
 		excel = new ExcelUtils();
-		registro = excel.buscarRegistro(codigoExcel,regCenario, this.planilha);
+		registro = excel.buscarRegistro(codigoExcel,Contexto.getIdCenario(), this.planilha);
 		excel.closeExcel();
 	}
 
@@ -38,5 +39,5 @@ public class FormularioModel {
 	public String geteMail() {
 		return registro.get(eMailExcel);
 	}
-
+	
 }

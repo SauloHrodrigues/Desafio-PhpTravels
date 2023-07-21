@@ -1,16 +1,16 @@
-package br.com.phptravels.kernel;
-import static br.com.phptravels.kernel.ConstrutorDriver.getDriver;
+package br.com.phptravels.kernel.driver;
+import static br.com.phptravels.kernel.Contexto.getDriver;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
 
 
-public class SeleniumInterative extends Esperas{
+public class InteracaoWeb extends Esperas{
 	private int tempoPadrao = 20;
 	
 	//Construtor
-	public SeleniumInterative() {
+	public InteracaoWeb() {
 		super();
 		
 	}

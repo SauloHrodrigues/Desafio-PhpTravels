@@ -1,4 +1,4 @@
-package br.com.phptravels.kernel;
+package br.com.phptravels.kernel.readers;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -15,7 +15,7 @@ public class ExcelUtils {
 	private static HSSFWorkbook pastaDeTrabalho;
 	private static HSSFSheet abaPlanilha;
 	private static HSSFCell celula; 
-	private static Configuracoes configuracoes;
+	private static ConfiguracoesPropriedades configuracoes;
 	private FileInputStream planilha;
 	private int totalRegistros;
 	private int totalColunas;
@@ -23,7 +23,7 @@ public class ExcelUtils {
 	
 	
 	public ExcelUtils() {
-		configuracoes = new Configuracoes();
+		configuracoes = new ConfiguracoesPropriedades();
 	}
 
 	//metodo setar o arquivo (abre o arquivo)

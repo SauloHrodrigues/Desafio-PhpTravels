@@ -1,16 +1,12 @@
 package br.com.phptravels.test.pages;
 
-import static br.com.phptravels.kernel.ConstrutorDriver.getDriver;
+import static br.com.phptravels.kernel.Contexto.getDriver;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import br.com.phptravels.kernel.SeleniumInterative;
-
-public class Page {
-
-	private SeleniumInterative dsl;
+public class HomePage {
 	
 	@FindBy(xpath = "//input[@type='text'][@name='first_name']")
 	private WebElement txtFirstName;
@@ -41,42 +37,43 @@ public class Page {
 
 
 //	CONSTRUTOR
-	public Page() {
-		dsl = new SeleniumInterative();
+	public HomePage() {
 		PageFactory.initElements(getDriver(), this);
 	}
-	
-//	METODOS
-	public void escreverFirstName(String texto) {
-		dsl.escrever(txtFirstName, texto);
-	}
-	
-	public void escreverLastName(String lastName) {
-		dsl.escrever(txtLastName, lastName);
-	}
-	
-	public void escreverBusinessName(String businessName) {
-		dsl.escrever(txtBusinessName, businessName);
-	}
-	
-	public void escreverEmail(String email) {
-		dsl.escrever(txtEmail, email);
-	}
-	
-	public void escreverResultadoSoma() {
-		int n1 = Integer.parseInt(lblPrimeiroNumero.getText());
-		int n2 = Integer.parseInt(lblSegundoNumero.getText());
-		dsl.escrever(txtResultado, n1+n2) ;
-	}
-	
-	public void clicarSubmit() {
-		dsl.clicarJS(btnSubmit);
+
+	public WebElement getTxtFirstName() {
+		return txtFirstName;
 	}
 
-	
-	public WebElement msgThankYou() {	
-		dsl.esperarElementoVisivel(msgTankYou, 20);
-		return msgTankYou;	
-		}
-	
+	public WebElement getTxtLastName() {
+		return txtLastName;
+	}
+
+	public WebElement getTxtBusinessName() {
+		return txtBusinessName;
+	}
+
+	public WebElement getTxtEmail() {
+		return txtEmail;
+	}
+
+	public WebElement getTxtResultado() {
+		return txtResultado;
+	}
+
+	public WebElement getLblPrimeiroNumero() {
+		return lblPrimeiroNumero;
+	}
+
+	public WebElement getLblSegundoNumero() {
+		return lblSegundoNumero;
+	}
+
+	public WebElement getBtnSubmit() {
+		return btnSubmit;
+	}
+
+	public WebElement getMsgTankYou() {
+		return msgTankYou;
+	}
 }
